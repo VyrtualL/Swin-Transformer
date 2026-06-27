@@ -5,10 +5,11 @@ An reimplementation of the **Swin Transformer**, trained on **ImageNet-100** for
 ## The Paper
 
 **Swin Transformer: Hierarchical Vision Transformer using Shifted Windows** (Liu et al., ICCV 2021)
+
 This paper introduces a vision backbone that builds a **hierarchical** feature representation while keeping the Transformer's self-attention mechanism, by restricting attention to small local **windows** and shifting those windows between consecutive blocks.
 
 ![Swin Transformer architecture](https://raw.githubusercontent.com/microsoft/Swin-Transformer/main/figures/teaser.png)
-*Figure from the official [microsoft/Swin-Transformer](https://github.com/microsoft/Swin-Transformer) repository (Liu et al., 2021).*
+*Image from the official [microsoft/Swin-Transformer](https://github.com/microsoft/Swin-Transformer) repository (Liu et al., 2021).*
 
 **Improvements over the classic ViT :**
 - **Hierarchical features instead of a single scale** : patches are progressively merged stage by stage, producing multi-scale feature maps usable for detection/segmentation, unlike ViT's fixed single-resolution output.
@@ -19,9 +20,13 @@ This paper introduces a vision backbone that builds a **hierarchical** feature r
 ## Dataset I used : ImageNet-100
 
 [ImageNet-100](https://www.kaggle.com/datasets/ambityga/imagenet100) is a 100-class subset of ImageNet-1K, with about 1,300 training images per class. 
+
 I couldn't use ImageNet-1K due to a lack of computing resources.
+
 It's downloaded via `kaggle`. The provided validation folder is split 90/10 into a validation set and a held-out test set. 
+
 Images are resized to 224×224 and normalized with the standard ImageNet mean/std
+
 Training images are additionally augmented with random horizontal flips and color jitter.
 
 ## Training Setup
